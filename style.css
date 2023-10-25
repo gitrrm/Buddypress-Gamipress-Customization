@@ -15,3 +15,140 @@ Text Domain: nandanglobal
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+/*Header*/
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+	display: block;
+/*	width: 100%;*/
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.site-branding .site-title a {
+    text-decoration: none;
+    color: #000;
+}
+.site-branding .site-title a:hover {
+    color: #ffc107;
+}
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+#primary-menu {
+    list-style: none;
+    position: absolute;
+    z-index: 999;
+    left: 55%;
+    transform: translateX(-50%);
+}
+@media (max-width:570px){
+	#primary-menu {
+	    background: #fff;
+	    width: 100%;
+	    text-align: center;
+	}
+}
+#primary-menu .menu-item {
+    margin: 18px 15px;
+}
+#primary-menu .menu-item a {
+    text-decoration: none;
+    color: #777;
+}
+#primary-menu .menu-item a:hover {
+    text-decoration: none;
+    color: #ffc107;
+}
+#primary-menu .menu-item a i {
+    position: absolute;
+    top: -12px;
+    margin-left: 10px;
+    font-size: 20px !important;
+}
+@media(max-width: 570px){
+	#primary-menu .menu-item a i {
+	    position: relative;
+	    top: 7px;
+	    margin-left: 0px;
+	    padding-right: 10px;
+	}
+}
+#username img {
+    border-radius: 50%;
+}
+#username a {
+    text-decoration: none;
+    color: #777;
+    display: block;
+}
+#username a:hover {
+    color: #ffc107;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+
+
+.blog .card {
+    background-color: transparent;
+    border: none;
+}
+.navigation .nav-links div{
+	text-align: center;
+	padding-top: 20px;
+}
