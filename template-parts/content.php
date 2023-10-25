@@ -6,56 +6,18 @@
  */
 
 ?>
+<div class="card mb-3 border-bottom pt-3 pb-4 pt-4">
+    <div class="card-body d-md-flex">
+        <div class="col-12 col-md-6">
+            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-100" />
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				// nandanglobal_posted_on();
-				// nandanglobal_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php the_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'nandanglobal' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nandanglobal' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<!-- <?php //nandanglobal_entry_footer(); ?> -->
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+           
+                
+            </div>
+        <div class="col-12 col-md-6 ps-md-5">
+            <h2 class="card-title pt-3 pt-md-0"><?php the_title(); ?></h2>
+            <p class="card-text"><?php the_excerpt(); ?></p>
+            <a href="<?php the_permalink(); ?>" class="btn btn-warning float-end">Start</a>
+        </div>
+    </div>
+</div>
