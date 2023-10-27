@@ -167,3 +167,12 @@ function change_default_profile_avatar(){
     }
 }
 add_filter('bp_core_default_avatar_user', 'change_default_profile_avatar');
+
+
+// Remove hard coded post thumnail width and height
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
