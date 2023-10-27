@@ -10,10 +10,7 @@
     <div class="card-body d-md-flex">
         <div class="col-12 col-md-6">
             <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-100" />
-
-           
-                
-            </div>
+        </div>
         <div class="col-12 col-md-6 ps-md-5">
             <h2 class="card-title pt-3 pt-md-0"><?php the_title(); ?></h2>
             <p class="card-text"><?php the_excerpt(); ?></p>
