@@ -5,6 +5,8 @@
  * @package nandanglobal
  */
 
+if( !defined( 'ABSPATH' ) ) exit;
+
 ?>
 
 <section class="no-results not-found">

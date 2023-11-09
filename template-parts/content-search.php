@@ -4,6 +4,7 @@
  *
  * @package nandanglobal
  */
+if( !defined( 'ABSPATH' ) ) exit;
 
 ?>
 
