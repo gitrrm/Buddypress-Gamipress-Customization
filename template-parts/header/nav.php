@@ -4,6 +4,7 @@
  * 
  * @package Nandan Global
  */
+if( !defined( 'ABSPATH' ) ) exit;
 ?>
 <header id="masthead" class="site-header container bg-white overflow-hidden pb-3 pt-3" role="banner"> 
 	<div class="site-branding float-start inline-block border-box ">
