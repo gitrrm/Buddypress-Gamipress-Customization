@@ -4,6 +4,8 @@
  * 
  * @package Nandan.Global
  */ 
+if( !defined( 'ABSPATH' ) ) exit;
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -21,5 +23,10 @@
    <div id="page" class="site">
        <?php get_template_part('template-parts/header/nav'); ?>
        <div id="content" class="site-content">
-        
+        <div class="container bg-warning p-2 text-center">
+            <h6 class="text-uppercase text-decoration-underline">Tip of the day</h6>
+            <?php echo do_shortcode('[tips_of_the_day]'); ?>
+        </div>
+
+
            

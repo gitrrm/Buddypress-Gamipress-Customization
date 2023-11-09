@@ -4,7 +4,7 @@
  *
  * @package nandanglobal
  */
-
+if( !defined( 'ABSPATH' ) ) exit;
 get_header();
 ?>
 

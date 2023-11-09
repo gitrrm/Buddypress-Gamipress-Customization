@@ -4,6 +4,7 @@
  * 
  * @package Nandan.Global
  */ 
+if( !defined( 'ABSPATH' ) ) exit;
 ?>
    <footer id="colophon" class="site-footer">
       <div class="site-info bg-warning pt-2 pb-2 text-center">

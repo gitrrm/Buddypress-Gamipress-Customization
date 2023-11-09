@@ -3,6 +3,8 @@
  * Template Name: Nandan Custom Template 
  * 
  * */
+
+if( !defined( 'ABSPATH' ) ) exit;
 get_header();
 
 
@@ -22,14 +24,14 @@ $query = new WP_Query($args);
 <div class="container bg-light px-5 pt-5 pb-0">
     <div class="row">
         <h2>Nandan Global</h2>
-        <p>
-        Welcome to the test of Nandan Global.
+        <p class="mb-3">
+        Welcome to the test of Nandan Global.<br/>
         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </p>
     </div>
     <div class="d-none d-sm-none d-md-none d-lg-block">
         <!-- <div class="col-md-1"> -->
-            <div class="circle position-absolute top-50 start-50"></div>
+            <div class="circle circle-start position-sticky start-50"></div>
             <div class="vline position-relative top-50 start-50 mt-1"  style="height: 40px;"></div>
             <div class="hline"></div>
             <div class="vline"></div>
@@ -41,7 +43,7 @@ if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
 ?>
 
-    <div class="row nandan-row mb-5">
+    <div class="row nandan-row  mb-5">
         <div class="col-md-1 d-none d-sm-none d-md-none d-lg-block">
             <div class="vline"></div>
             <div class="circle"></div>
@@ -52,8 +54,8 @@ if ($query->have_posts()) :
                 <div class="post-thumbnail">
                     <?php 
                         $alt_text = get_the_title();
+                        the_post_thumbnail('large', ['class' => 'img-fluid', 'alt' => esc_attr($alt_text)]); 
                     ?>
-                    <?php the_post_thumbnail('large', ['class' => 'img-fluid', 'alt' => esc_attr($alt_text)]); ?>
                 </div>
             <?php endif; ?>
         </div>

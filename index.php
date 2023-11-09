@@ -5,6 +5,8 @@
  * @package Nandan.Global
  */ 
 
+if( !defined( 'ABSPATH' ) ) exit;
+
 get_header();
 
 ?>
