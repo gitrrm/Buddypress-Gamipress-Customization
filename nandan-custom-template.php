@@ -29,7 +29,7 @@ $query = new WP_Query($args);
         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </p>
     </div>
-    <div class="d-none d-sm-none d-md-none d-lg-block">
+    <div class="">
         <!-- <div class="col-md-1"> -->
             <div class="circle circle-start position-sticky start-50"></div>
             <div class="vline position-relative top-50 start-50 mt-1"  style="height: 40px;"></div>
@@ -43,26 +43,28 @@ if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
 ?>
 
-    <div class="row nandan-row  mb-5">
-        <div class="col-md-1 d-none d-sm-none d-md-none d-lg-block">
+    <div class="row nandan-row mb-5">
+        <div class="col-1 col-md-1">
             <div class="vline"></div>
             <div class="circle"></div>
             <div class="vline h-100"></div>
         </div>
-        <div class="col-md-5">
-            <?php if (has_post_thumbnail()) : ?>
-                <div class="post-thumbnail">
-                    <?php 
-                        $alt_text = get_the_title();
-                        the_post_thumbnail('large', ['class' => 'img-fluid', 'alt' => esc_attr($alt_text)]); 
-                    ?>
-                </div>
-            <?php endif; ?>
-        </div>
-        <div class="col-md-6">
-            <h2><?php the_title(); ?></h2>
-            <p><?php the_excerpt(); ?></p>
-            <a href="<?php the_permalink(); ?>" class="btn btn-warning float-end">Start</a>
+        <div class="col-11 col-md-11 pt-3">            
+            <div class="col-sm-12 col-md-4 float-start ms-n3 thumb-wrapper">
+                <?php if (has_post_thumbnail()) : ?>
+                    <div class="post-thumbnail">
+                        <?php 
+                            $alt_text = get_the_title();
+                            the_post_thumbnail('large', ['class' => 'img-fluid', 'alt' => esc_attr($alt_text)]); 
+                        ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="col-sm-12 col-md-8 float-end post-cont-wrapper">
+                <h2><?php the_title(); ?></h2>
+                <p><?php the_excerpt(); ?></p>
+                <a href="<?php the_permalink(); ?>" class="btn btn-warning float-end">Start</a>
+            </div>
         </div>
     </div>
 

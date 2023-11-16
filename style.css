@@ -103,6 +103,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #primary-menu .menu-item a {
     text-decoration: none;
     color: #777;
+    display: grid;
 }
 #primary-menu .menu-item a:hover {
     text-decoration: none;
@@ -111,7 +112,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #primary-menu .menu-item a i {
     position: relative;
     top: -12px;
-    left: 50%;
+    left: 10%;
     font-size: 20px !important;
 }
 @media(max-width: 570px){
@@ -180,7 +181,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 .vline {
     width: 19px;
-    height: 20px;
+    height: 30px;
     border-right: 8px solid #ffcd39;
 }
 .hline {
@@ -194,4 +195,17 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .row.nandan-row:last-child {
     margin-bottom: 0 !important;
     padding-bottom: 50px;
+}
+.post-cont-wrapper {
+    padding-left: 40px !important;
+    padding-top: 20px;
+}
+@media(max-width: 570px){
+	.post-thumbnail {
+	    padding-left: 20px;
+	}
+	.post-cont-wrapper {
+	    padding-left: 20px !important;
+	    padding-top: 20px;
+	}
 }

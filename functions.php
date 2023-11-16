@@ -148,26 +148,6 @@ function add_custom_class_to_posts_navigation($attributes) {
 add_filter('previous_posts_link_attributes', 'add_custom_class_to_posts_navigation');
 add_filter('next_posts_link_attributes', 'add_custom_class_to_posts_navigation');
 
-// Buddypress default profile image functionality
-
-// disable default gravatar
-add_filter('bp_core_fetch_avatar_no_grav', '__return_true');
-
-// default member avatar
-function change_default_profile_avatar(){
-	$current_user = wp_get_current_user();
-	$user_id = $current_user->ID;
-	$roles = (array) $current_user->roles;
-	$upload_dir = wp_upload_dir();
-
-	if(is_user_logged_in()){
-    	if(in_array('administrator', (array)$roles)){
-			return $upload_dir['baseurl'] . '/2023/10/default-user.png';
-    	}
-    }
-}
-add_filter('bp_core_default_avatar_user', 'change_default_profile_avatar');
-
 
 // Remove hard coded post thumnail width and height
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
@@ -176,5 +156,29 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
+
+/**
+ * Rewards 100 extra GamiPress points when a user publishes a even numbered new post.
+ */
+
+function reward_points_for_publishing_post($post_id) {
+    // Get the post author ID.
+    $post_author_id = get_post_field('post_author', $post_id);
+
+    // Check if the user has already been rewarded for publishing this post.
+    $already_rewarded = get_post_meta($post_id, '_gamipress_credits_new_points', true);
+
+    $user_id = get_current_user_id();
+    if(count_user_posts($user_id)%2 == 0){
+    	if (!$already_rewarded) {
+	        // Award points to the user for publishing the post.
+	        gamipress_award_points_to_user($user_id, 100, 'credits');
+
+	        // Set the post meta to indicate that the user has been rewarded.
+	        update_post_meta($post_id, '_gamipress_credits_new_points', true);
+	    }
+    }    
+}
+add_action('publish_post', 'reward_points_for_publishing_post');
 
 
