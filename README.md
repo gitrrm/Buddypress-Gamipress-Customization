@@ -1,2 +1,2 @@
 # Buddypress & Gamipress Customization 
-#This is simple theme and functionalities created to enhance the functionalities 
+# A custom theme to add some customized features to Gammipress & BuddyPress plugins
